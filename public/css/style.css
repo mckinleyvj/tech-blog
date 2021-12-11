@@ -1,0 +1,7 @@
+/* global selector */
+* {
+	font-family: "Red Hat Display", sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	transition: 500ms;
+}
