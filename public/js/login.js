@@ -1,6 +1,5 @@
-const txtUserName = document.querySelector("#loginUserName");
-const txtPassword = document.querySelector("#loginPassword");
-const loginFrm = document.querySelector("#loginForm");
+const txtUserName = document.querySelector("#username-login");
+const txtPassword = document.querySelector("#password-login");
 
 const login = async (event) => {
   event.preventDefault();
@@ -32,4 +31,7 @@ const login = async (event) => {
 
 txtUserName.focus();
 
-loginFrm.addEventListener("submit", login);
+const el = document.getElementById('login-btn');
+if(el){
+  el.addEventListener('click', login);
+}

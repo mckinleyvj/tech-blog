@@ -25,6 +25,10 @@ Comments.init(
         key: 'id',
       },
     },
+    comment: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     datetime_stamp: {
       type: DataTypes.DATE,
       allowNull: false,

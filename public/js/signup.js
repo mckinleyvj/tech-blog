@@ -1,6 +1,5 @@
-const txtUserNameSU = document.querySelector("#nameSignup");
-const txtPasswordSU = document.querySelector("#passwordSignup");
-const signUpFrm = document.querySelector("#signUpForm");
+const txtUserNameSU = document.querySelector("#username-signup");
+const txtPasswordSU = document.querySelector("#password-signup");
 
 const signup = async (event) => {
   event.preventDefault();
@@ -13,32 +12,27 @@ const signup = async (event) => {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
-    });
-    const data = await response.json();
-    if (data) {
-      const walletResponse = await fetch("/api/wallet/createWallet", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      if (walletResponse.ok) {
-        location.reload();
-        window.location.replace("/dashboard");
-      } else {
+    });    
+    if (response.ok) {
+      window.alert("Successfully added user");
+      location.reload();
+      window.location.replace("/dashboard");
+    }else{
         alert(`Username already exist. Please try again.`);
         txtUserNameSU.value = "";
         txtPasswordSU.value = "";
         txtUserNameSU.focus();
         return;
-      }
-    } else {
-      alert(`Username already exist. Please try again.`);
-      console.log(response.status);
-    }
+    }  
+  } else {
+    alert(`Username already exist. Please try again.`);
+    console.log(response.status);
   }
 };
 
 txtUserNameSU.focus();
 
-signUpFrm.addEventListener("submit", signup);
+const el = document.getElementById('signup-btn');
+if(el){
+  el.addEventListener('click', signup);
+}

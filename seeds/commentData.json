@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "user_id": "2",
+        "post_id": "1",
+        "comment": "Correct! That is absolutely right.",
+        "datetime_stamp": "2021-12-18 23:32:12"
+    },
+    {
+      "user_id": "1",
+      "post_id": "1",
+      "comment": "Thanks! :)",
+      "datetime_stamp": "2021-12-18 23:35:12"
+  }
+]

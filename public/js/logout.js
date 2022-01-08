@@ -1,4 +1,4 @@
-const logoutBtn = document.querySelector("#logoutBtn");
+const logoutBtn = document.querySelector("#logout-btn");
 
 const logout = async () => {
   

@@ -1,1 +1,27 @@
-
+{{!-- {{> post perPost}} --}}
+{{#if posts.length}}
+    <section class="container">
+      {{#each posts as |post|}}
+      <div class="card">
+      <p class="card-user">{{post.user.username}} | {{post.datetime_stamp}}</p>
+      <hr>
+      <p>{{post.post}}</p>
+      {{#if comments.length}}
+      {{!-- <p>Comments:</p>
+       {{#each comments as |aComm|}}
+          <p>{{aComm.comment}} 
+            {{#each user}}
+              {{user.username}}
+            {{/each}}</p>
+        {{/each}} --}}
+      {{/if}}
+      </div>
+      {{!-- {{#each comments}}
+        <p>{{comment}}</p>
+      {{/each}} --}}
+        
+      {{/each}}
+    </section>
+    {{else}}
+    <h2>No posts available.</h2>
+  {{/if}}
