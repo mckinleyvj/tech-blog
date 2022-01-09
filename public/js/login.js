@@ -15,6 +15,7 @@ const login = async (event) => {
       });
   
       if (response.ok) {
+        window.alert("Logged in successfully");
         location.reload();
         window.location.replace("/dashboard");
       }else{

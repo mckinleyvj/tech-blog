@@ -34,26 +34,61 @@ router.get('/login', (req, res) => {
   try {
     if (req.session.user_id) {
       res.render("login", { logged_in: req.session.logged_in })
+    } else {
+      res.render("login", { logged_in: req.session.logged_in })
     }
   } catch (err) {
     res.status(500).json(err);
   }
-
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
 });
 
 router.get('/signup', (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
+  try {
+    if (req.session.user_id) {
+      res.render("signup", { logged_in: req.session.logged_in })
+    } else {
+      res.render("signup", { logged_in: req.session.logged_in })
+    }
+  } catch (err) {
+    res.status(500).json(err);
   }
+});
 
-  res.render('signup');
+router.get("/dashboard", withAuth, async (req, res) => {
+  try {
+    const userData = await Users.findOne({
+      where: {
+        id: req.session.user_id,
+      },
+    });
+    const userName = userData.username;
+
+    const dbPostData = await Posts.findAll({
+      where: {
+        user_id: req.session.user_id
+      },
+      include: [
+        {
+          model: Comments, include: { model: Users }
+        },
+        {
+          model: Users
+        }
+      ]
+    });
+
+    const posts = dbPostData.map(post => post.get({ plain: true }));
+    console.log(posts);
+    if (req.session.user_id) {
+      res.render("dashboard", {
+        posts,
+        userName,
+        logged_in: req.session.logged_in
+      });
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

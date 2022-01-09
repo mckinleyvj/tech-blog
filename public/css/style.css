@@ -116,3 +116,22 @@
 .card p {
 	line-height: 1.5;
 }
+
+.dashboard {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: fit-content;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+}
+.dashboard-header {
+	margin-bottom: 5%;
+	font-weight: 900;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}

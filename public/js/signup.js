@@ -14,7 +14,7 @@ const signup = async (event) => {
       headers: { "Content-Type": "application/json" },
     });    
     if (response.ok) {
-      window.alert("Successfully added user");
+      window.alert("User signed up successfully.");
       location.reload();
       window.location.replace("/dashboard");
     }else{

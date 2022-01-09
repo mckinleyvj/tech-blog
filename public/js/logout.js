@@ -9,6 +9,7 @@ const logout = async () => {
     },
   });
   if (response.ok) {
+    window.alert("Logged out successfully.");
     location.reload();
     window.location.replace("/");
   } else {
