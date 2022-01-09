@@ -96,4 +96,38 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
+router.get("/post/:id", async (req, res) => {
+
+  try {
+    const dbPostData = await Posts.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [
+        { model: Comments, include: { model: Users }},
+        { model: Users }
+      ],
+    });
+
+    const post = dbPostData.get({ plain: true });
+
+    if (req.session.user_id) {
+      res.render('viewpost', {
+        post,
+        logged_in: req.session.logged_in
+      });
+    }else {
+      res.render('viewpost', {
+        post,
+        logged_in: req.session.logged_in
+      });
+    }
+   
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+
+});
+
 module.exports = router;

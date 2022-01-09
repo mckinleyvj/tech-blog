@@ -3,8 +3,9 @@
     <hr>
     {{#if comments.length}}
     <div>
+    <p>Comments:</p>
     {{#each comments as |comment|}}
-        <p>Comment by: {{comment.user.username}} - {{comment.comment}}</p>
+        <p>{{format_shortdate comment.datetime_stamp}}, {{format_time comment.datetime_stamp}} {{comment.user.username}} : {{comment.comment}}</p>
     {{/each}}
     </div>
     {{/if}}

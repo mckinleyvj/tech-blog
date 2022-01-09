@@ -6,7 +6,10 @@ module.exports = {
   format_date: (date) => {
     return moment(date).format("dddd, Do MMMM YYYY");
   },
+  format_shortdate: (date) => {
+    return moment(date).format("DD/MM/YYYY")
+  },
   format_time: (time) => {
-    return moment(time).format("h:mm:ss a");
+    return moment(time).format("hh:mm:ss a");
   },
 };

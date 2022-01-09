@@ -1,0 +1,19 @@
+{{> post-data post}}
+
+{{#if logged_in}}
+<form class="commentFrm">
+  <input type="hidden" id="post_id" name="post_id" value="{{post.id}}">
+  <div>
+    <textarea id="commentTxt" name="commentTxt"></textarea>
+  </div>
+
+  <div>
+    <button id="commentBtn" type="submit">Add comment</button>
+  </div>
+  
+</form>
+{{/if}}
+
+{{#if logged_in}}
+<script src="/js/comment.js"></script>
+{{/if}}
