@@ -4,9 +4,9 @@ const moment = require('moment');
 
 module.exports = {
   format_date: (date) => {
-    return date.toLocaleDateString("en-AU");
+    return moment(date).format("dddd, Do MMMM YYYY");
   },
   format_time: (time) => {
-    return moment(time).format("hh:mm a ZZ");
+    return moment(time).format("h:mm:ss a");
   },
 };
