@@ -78,7 +78,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
     });
 
     const posts = dbPostData.map(post => post.get({ plain: true }));
-    console.log(posts);
     if (req.session.user_id) {
       res.render("dashboard", {
         posts,

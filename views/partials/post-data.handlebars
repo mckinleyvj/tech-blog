@@ -1,3 +1,12 @@
 <div>
     <p>{{post}}</p>
+    <hr>
+    {{#if comments.length}}
+    <div>
+    {{#each comments as |comment|}}
+        <p>Comment by: {{comment.user.username}} - {{comment.comment}}</p>
+    {{/each}}
+    </div>
+    {{/if}}
+   
 </div>
