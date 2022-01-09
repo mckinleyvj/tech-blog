@@ -8,6 +8,9 @@ router.get("/", async (req, res) => {
       try {
       const postData = await Posts.findAll({
         include: [{ model: Users }, {model: Comments}],
+        order: [
+          ['datetime_stamp', 'DESC'],
+        ],
       });
 
       const posts = postData.map((post) => post.get({ plain: true }));
