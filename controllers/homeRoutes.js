@@ -77,7 +77,10 @@ router.get("/dashboard", withAuth, async (req, res) => {
         {
           model: Users
         }
-      ]
+      ],
+      order: [
+        ['datetime_stamp', 'DESC'],
+      ],
     });
 
     const posts = dbPostData.map(post => post.get({ plain: true }));

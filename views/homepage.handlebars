@@ -2,10 +2,11 @@
 {{#if posts.length}}
     <section class="container">
       {{#each posts as |post|}}
-      <div class="card">
-      <p class="card-user">{{post.user.username}} | {{format_date post.datetime_stamp}}</p>
+      <a class="card-link" href="/post/{{id}}"><div class="card">
+      <p class="card-user">Posted by: {{post.user.username}} on {{format_date post.datetime_stamp}} at {{format_time post.datetime_stamp}}</p>
       <hr>
       <p>{{post.post}}</p>
+      
       {{#if comments.length}}
       {{!-- <p>Comments:</p>
        {{#each comments as |aComm|}}
@@ -19,7 +20,7 @@
       {{!-- {{#each comments}}
         <p>{{comment}}</p>
       {{/each}} --}}
-        
+        </a>
       {{/each}}
     </section>
     {{else}}
