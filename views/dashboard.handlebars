@@ -3,7 +3,7 @@
 <h1 class="dashboard-header">Hello {{userName}} 👋</h1>
 
 <div>
-  <a href="/dashboard/create/">
+  <a href="/dashboard/createpost">
   <button id="create-post">Create new post</button>
   </a>
 </div>
@@ -11,12 +11,18 @@
 <br>
 <div>
     <h1>Your current posts:</h1>
+    <p>Posts with comments cannot be edited.</p>
     <br>
     </div>
     {{#if posts.length}}
     {{#each posts as |post|}}
         {{> post-data post}}
-            <a href="/dashboard/edit/{{post.id}}"><button>Edit this post</button></a>
+        {{#if post.comments.length}}
+        <a href="/dashboard/delete/{{post.id}}"><button>Delete this post</button></a>
+        {{else}}
+        <a href="/dashboard/edit/{{post.id}}"><button>Edit this post</button></a>
+        {{/if}}
+            
     {{/each}}
 
 {{else}}

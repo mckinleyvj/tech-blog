@@ -26,9 +26,6 @@ const commentFormHandler = async (e) => {
         } catch (err) {
             console.log(err);
         }
-      
-        //  else {
-        //   alert(response.statusText);
     }
 }
   

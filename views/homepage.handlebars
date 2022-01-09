@@ -1,27 +1,23 @@
 {{!-- {{> post perPost}} --}}
 {{#if posts.length}}
     <section class="container">
-      {{#each posts as |post|}}
-      <a class="card-link" href="/post/{{id}}"><div class="card">
-      <p class="card-user">Posted by: {{post.user.username}} on {{format_date post.datetime_stamp}} at {{format_time post.datetime_stamp}}</p>
-      <hr>
-      <p>{{post.post}}</p>
-      
-      {{#if comments.length}}
-      {{!-- <p>Comments:</p>
-       {{#each comments as |aComm|}}
-          <p>{{aComm.comment}} 
-            {{#each user}}
-              {{user.username}}
-            {{/each}}</p>
-        {{/each}} --}}
+      {{#if logged_in}}
+        {{#each posts as |post|}}
+            <a class="card-link" href="/post/{{id}}"><div class="card">
+            <p class="card-user">Posted by: {{post.user.username}} on {{format_date post.datetime_stamp}} at {{format_time post.datetime_stamp}}</p>
+            <hr>
+            <p>{{post.post}}</p>
+            </div></a>
+        {{/each}}
+      {{else}}
+        {{#each posts as |post|}}
+            <a class="card-link" href="/login"><div class="card">
+            <p class="card-user">Posted by: {{post.user.username}} on {{format_date post.datetime_stamp}} at {{format_time post.datetime_stamp}}</p>
+            <hr>
+            <p>{{post.post}}</p>
+            </div></a>
+        {{/each}}
       {{/if}}
-      </div>
-      {{!-- {{#each comments}}
-        <p>{{comment}}</p>
-      {{/each}} --}}
-        </a>
-      {{/each}}
     </section>
     {{else}}
     <h2>No posts available.</h2>
