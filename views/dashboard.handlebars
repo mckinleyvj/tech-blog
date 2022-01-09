@@ -1,21 +1,28 @@
 <div class="dashboard">
 <h1 class="dashboard-header">Dashboard</h1>
-<hr>
-<h1>Hello {{userName}} 👋</h1>
-<hr>
-<br>
+<h1 class="dashboard-header">Hello {{userName}} 👋</h1>
+<div>
+    <p>Tools</p>
+</div>
+
+<div>
   <a href="/dashboard/create/">
-  <button id="create-post">create post</button></a>
-<h2 class="title pb-4">dashboard: your posts</h2><hr>
-{{#if posts.length}}
+  <button id="create-post">Create new post</button>
+  </a>
+</div>
+<br>
+<br>
+<div>
+    <h1>Your current posts:</h1>
+    <hr>
     </div>
+    {{#if posts.length}}
     {{#each posts as |post|}}
         {{> post-data post}}
-            <a href="/dashboard/edit/{{post.id}}"><button>edit post</button></a>
-        </div>
+            <a href="/dashboard/edit/{{post.id}}"><button>Edit this post</button></a>
     {{/each}}
 
 {{else}}
 <h6>you do not currently have any posts</h6>
-
+</div>
 {{/if}}
