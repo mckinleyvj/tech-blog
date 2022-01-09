@@ -122,6 +122,8 @@ router.get("/post/:id", async (req, res) => {
 
     const post = dbPostData.get({ plain: true });
 
+    console.log(post);
+
     if (req.session.user_id) {
       res.render('viewpost', {
         post,

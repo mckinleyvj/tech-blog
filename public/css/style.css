@@ -109,6 +109,16 @@
 	color: white;
 }
 
+.post-card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.8s;
+	padding: 20px;
+	width: 75vw;
+	display: flex;
+	flex-direction: column;
+	margin: 5px;
+}
+
 .card-date {
 	text-align: right;
 	font-size: 12px;
@@ -148,4 +158,37 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+}
+
+.post-title {
+	font-weight: 900;
+	font-size: 24px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.post-detail {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	/* text-align: center; */
+}
+
+.strong {
+	font-weight: 700;
+}
+
+.comments {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.comment-date {
+	font-size: 16px;
+}
+
+.commentTxt {
+	width: 100%;
 }

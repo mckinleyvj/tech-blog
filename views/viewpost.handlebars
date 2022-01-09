@@ -1,3 +1,5 @@
+<section class="container">
+  <div class="post-card">
 <a id="pageback" class="pageback" href="javascript:history.back()">⬅ Back</a>
 {{> post-data post}}
 
@@ -5,7 +7,7 @@
 <form class="commentFrm">
   <input type="hidden" id="post_id" name="post_id" value="{{post.id}}">
   <div>
-    <textarea id="commentTxt" name="commentTxt"></textarea>
+    <textarea id="commentTxt" class="commentTxt" name="commentTxt"></textarea>
   </div>
 
   <div>
@@ -18,3 +20,5 @@
 {{#if logged_in}}
 <script src="/js/comment.js"></script>
 {{/if}}
+</div>
+</section>

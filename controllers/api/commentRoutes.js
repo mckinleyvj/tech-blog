@@ -2,16 +2,6 @@ const router = require('express').Router();
 const { Comments } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// router.get('/',  async (req, res) => {
-//     try {
-
-//         const dbCommentData = await Comments.findAll({});
-
-//     } catch (err) {
-//         res.status(400).json(err);
-//     }
-// });
-
 router.post('/create', withAuth,  async (req, res) => {
     try {
             const newComment = req.body.usrComment;

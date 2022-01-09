@@ -1,13 +1,19 @@
 <div>
-    <p>{{post}}</p>
+    <h1 class="post-title">{{post}}</h1>
+    <p class="post-detail"><span class="strong">Posted by</span>: {{user.username}}&nbsp;&nbsp;<span class="strong">Date</span>: {{format_date datetime_stamp}}</p> 
     <hr>
     {{#if comments.length}}
     <div>
-    <p>Comments:</p>
+    <p class="strong">Comments:</p>
     {{#each comments as |comment|}}
-        <p>{{format_shortdate comment.datetime_stamp}}, {{format_time comment.datetime_stamp}} {{comment.user.username}} : {{comment.comment}}</p>
+        <p class="comments">
+            <span>
+                <span class="strong">- {{comment.user.username}}</span> 
+                <span class="comment-date">({{format_date comment.datetime_stamp}} {{format_time comment.datetime_stamp}})</span>: 
+                {{comment.comment}}
+            </span>
+        </p>
     {{/each}}
     </div>
     {{/if}}
-   
 </div>
