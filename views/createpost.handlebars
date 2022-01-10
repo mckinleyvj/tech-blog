@@ -1,15 +1,16 @@
-<section>
+<section class="container">
+  <div class="post-card">
   <a id="pageback" class="pageback" href="/dashboard">⬅ Back</a>
-  <h2 class="title">Create new posting</h2><hr>
+  <h1  class="post-title">Create new posting</h1><hr>
   <input type="hidden" id="user_id" name="user_id" value="{{user_id}}">
   <form class="new-post-form">
     <div>
-      <label for="createPost">Post:</label>
-      <input id="createPost" name="createPost" placeholder="What are you thinking?"/>
+      <input id="createPost" name="createPost" class="commentTxt" placeholder="What are you thinking?"/>
       
     </div>
     <button id="postBtn" type="submit">Submit post</button>
   </form>
+  </div>
 </section>
 
 <script src="/js/createpost.js"></script>

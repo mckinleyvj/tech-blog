@@ -172,7 +172,6 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	/* text-align: center; */
 }
 
 .strong {
@@ -181,12 +180,13 @@
 
 .comments {
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 .comment-date {
-	font-size: 16px;
+	font-size: 12px;
 }
 
 .commentTxt {
