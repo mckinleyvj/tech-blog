@@ -4,7 +4,7 @@ const moment = require('moment');
 
 module.exports = {
   format_date: (date) => {
-    return moment(date).format("dddd, Do MMMM YYYY");
+    return moment(date).format("Do MMMM YYYY");
   },
   format_shortdate: (date) => {
     return moment(date).format("DD/MM/YYYY")

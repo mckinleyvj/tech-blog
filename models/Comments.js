@@ -38,6 +38,7 @@ Comments.init(
   {
     sequelize,
     timestamps: false,
+    onDelete: 'cascade',
     freezeTableName: true,
     underscored: true,
     modelName: 'comments',

@@ -71,7 +71,8 @@ router.get("/dashboard", withAuth, async (req, res) => {
       },
       include: [
         {
-          model: Comments, include: { model: Users }
+          model: Comments, 
+          include: { model: Users }
         },
         {
           model: Users
@@ -114,10 +115,13 @@ router.get("/post/:id", async (req, res) => {
       where: {
         id: req.params.id
       },
-      include: [
-        { model: Comments, include: { model: Users }},
+      include: [{ 
+        model: Comments, 
+        include: { model: Users }
+        },
         { model: Users }
       ],
+      
     });
 
     const post = dbPostData.get({ plain: true });

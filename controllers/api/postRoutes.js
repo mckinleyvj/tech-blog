@@ -17,4 +17,19 @@ router.post("/create", withAuth, async (req, res) => {
     }
   });
 
+  router.delete("/delete/:id", withAuth, async (req, res) => {
+    try {
+      const post_id = await Posts.findByPk(req.params.id);
+      if (!post_id) {
+        res.status(400).json({ message: "Cant find the id of this post" });
+        return;
+      } 
+        await post_id.destroy();
+        res.sendStatus(204);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
 module.exports = router;

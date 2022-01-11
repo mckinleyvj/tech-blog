@@ -1,6 +1,7 @@
 <section class="container">
   <div class="post-card">
 <a id="pageback" class="pageback" href="javascript:history.back()">⬅ Back</a>
+<br>
 {{> post-data post}}
 
 {{#if logged_in}}
@@ -9,7 +10,6 @@
   <div>
     <textarea id="commentTxt" class="commentTxt" name="commentTxt"></textarea>
   </div>
-
   <div>
     <button id="commentBtn" type="submit">Add comment</button>
   </div>

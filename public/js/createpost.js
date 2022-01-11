@@ -22,7 +22,8 @@ const postFormHandler = async (e) => {
               });
 
               if (response.ok) {
-                document.location.reload();
+                location.reload();
+                window.location.replace("/dashboard");
               }
         } catch (err) {
             console.log(err);
