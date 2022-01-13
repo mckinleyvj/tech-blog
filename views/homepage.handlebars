@@ -4,17 +4,19 @@
       {{#if logged_in}}
         {{#each posts as |post|}}
             <a class="card-link" href="/post/{{id}}"><div class="card">
-            <p class="card-user">Posted by: {{post.user.username}} on {{format_date post.datetime_stamp}} at {{format_time post.datetime_stamp}}</p>
+            <p class="post-title">{{post.post_title}}</p>
+            <p class="post-detail">{{post.post_text}}</p>
             <hr>
-            <p>{{post.post}}</p>
+            <p class="comment-date">Posted by: {{post.user.username}} on {{format_date post.datetime_stamp}} at {{format_time post.datetime_stamp}}</p>
             </div></a>
         {{/each}}
       {{else}}
         {{#each posts as |post|}}
             <a class="card-link" href="/login"><div class="card">
-            <p class="card-user">Posted by: {{post.user.username}} on {{format_date post.datetime_stamp}} at {{format_time post.datetime_stamp}}</p>
+            <p class="post-title">{{post.post_title}}</p>
+            <p class="post-detail">{{post.post_text}}</p>
             <hr>
-            <p>{{post.post}}</p>
+            <p class="comment-date">Posted by: {{post.user.username}} on {{format_date post.datetime_stamp}} at {{format_time post.datetime_stamp}}</p>
             </div></a>
         {{/each}}
       {{/if}}

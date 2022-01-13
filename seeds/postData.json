@@ -1,11 +1,13 @@
 [
     {
-      "post":"The Model-View-Controller (MVC) is an architectural pattern that separates an application into three main logical components: the model, the view, and the controller.",
+      "post_title":"Definition of MVC",
+      "post_text":"The Model-View-Controller (MVC) is an architectural pattern that separates an application into three main logical components: the model, the view, and the controller.",
       "datetime_stamp": "2021-12-18 22:32:12",
       "user_id": "1"
     },
     {
-      "post":"Coding bootcamp is challenging!",
+      "post_title":"Monash bootcamp difficulty",
+      "post_text":"Coding bootcamp is challenging!",
       "datetime_stamp": "2021-12-19 22:32:12",
       "user_id": "2"
     }

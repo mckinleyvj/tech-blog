@@ -1,20 +1,19 @@
-const postTxt = document.querySelector('#createPost');
-// const curr_usrid = document.querySelector('#user_id');
-
+const postTitle = document.querySelector('#createPostTitle'); //added
+const postText = document.querySelector('#createPostTxt'); //added
 
 const postFormHandler = async (e) => {
     e.preventDefault();
 
-    const usrPost = postTxt.value.trim();
-    // const usrId = curr_usrid.value.trim();
+    const usrPost = postTitle.value.trim();
+    const usrPostTxt = postText.value.trim();
 
-    if (usrPost) {
+    if (usrPost && usrPostTxt) {
         try {
             const response = await fetch('/api/posts/create', {
                 method: 'POST',
                 body: JSON.stringify({
                   usrPost,
-                  // usrId
+                  usrPostTxt,
                 }),
                 headers: {
                   'Content-Type': 'application/json'
