@@ -17,6 +17,8 @@
 	flex-wrap: nowrap;
 	align-items: center;
 	justify-content: space-between;
+	height: 1%;
+	width: 100vw;
 }
 
 .navbar li {
@@ -209,4 +211,20 @@
 
 .pageback:hover {
 	font-weight: 700;
+}
+
+@media screen and (max-width: 375px) {
+	.nav-link {
+		font-size: 20px;
+		padding: 0px;
+	}
+	.nav-header {
+		display: flex;
+		justify-content: center;
+	}
+	.navbar ul {
+		display: inline;
+		text-align: right;
+		padding-right: 20px;
+	}
 }
