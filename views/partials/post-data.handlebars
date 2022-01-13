@@ -6,10 +6,10 @@
         <span class="strong">Posted by</span>: {{user.username}}
      </p>
     <br>
-    <h1 class="post-title">{{post}}</h1>
+    <h1 class="post-title">{{post_title}}</h1>
+    <p class="post-detail">{{post_text}}</p>
     {{#if comments.length}}
     <div>
-    {{!-- <p class="strong">Comments:</p> --}}
     <hr>
     {{#each comments as |comment|}}
         <p class="comments">

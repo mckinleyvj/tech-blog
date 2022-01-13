@@ -19,12 +19,8 @@
       {{#each posts as |post|}}
           <div class="post-card">
           {{> post-data post}}
-          {{!-- {{#if post.comments.length}} --}}
           <br>
           <p><button id="btnDelete" data-id="{{post.id}}">Delete this post</button></p>
-          {{!-- {{else}} --}}
-          {{!-- <a href="/dashboard/edit/{{post.id}}"><button>Edit this post</button></a>
-          {{/if}} --}}
           </div>
       {{/each}}
     {{else}}

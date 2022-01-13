@@ -198,6 +198,10 @@
 	letter-spacing: 1px;
 }
 
+.commentBtn {
+	font-size: 14px;
+}
+
 .commentTxt {
 	width: 100%;
 	font-size: 14px;
