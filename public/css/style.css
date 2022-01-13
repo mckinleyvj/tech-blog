@@ -196,13 +196,19 @@
 	letter-spacing: 1px;
 }
 
-.commentBtn {
+.siteBtn {
 	font-size: 14px;
 }
 
 .commentTxt {
 	width: 100%;
 	font-size: 14px;
+}
+
+.commentTxtArea {
+	width: 100%;
+	font-size: 14px;
+	min-height: 10rem;
 }
 
 .pageback {

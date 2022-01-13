@@ -1,14 +1,18 @@
 <section class="container">
   <div class="post-card">
   <a id="pageback" class="pageback" href="/dashboard">⬅ Back</a>
-  <h1  class="post-title">Create new posting</h1><hr>
+  <br>
+  <h1  class="post-title">Create new posting</h1>
   <input type="hidden" id="user_id" name="user_id" value="{{user_id}}">
   <form class="new-post-form">
     <div>
       <input id="createPostTitle" name="createPostTitle" class="commentTxt" placeholder="Post Title"/>
-      <input id="createPostTxt" name="createPostTxt" class="commentTxt" placeholder="What are you thinking?"/>
     </div>
-    <button id="postBtn" type="submit">Submit post</button>
+    <br>
+    <div>
+      <textarea id="createPostTxt" name="createPostTxt" class="commentTxtArea" placeholder="What are you thinking?"></textarea>
+    </div>
+    <button id="postBtn" class="siteBtn" type="submit">Submit post</button>
   </form>
   </div>
 </section>

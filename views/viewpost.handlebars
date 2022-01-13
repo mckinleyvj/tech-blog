@@ -7,11 +7,12 @@
 {{#if logged_in}}
 <form class="commentFrm">
   <input type="hidden" id="post_id" name="post_id" value="{{post.id}}">
+  <br>
   <div>
-    <textarea id="commentTxt" class="commentTxt" name="commentTxt"></textarea>
+    <textarea id="commentTxt" class="commentTxtArea" name="commentTxt"></textarea>
   </div>
   <div>
-    <button id="commentBtn" class="commentBtn" type="submit">Add comment</button>
+    <button id="commentBtn" class="siteBtn" type="submit">Add comment</button>
   </div>
   
 </form>
