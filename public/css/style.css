@@ -15,7 +15,6 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	/* width: 90vw; */
 	align-items: center;
 	justify-content: space-between;
 }
@@ -36,7 +35,6 @@
 .navbar ul {
 	display: flex;
 	flex-direction: row;
-	/* width: 15%; */
 	justify-content: space-evenly;
 	flex: 1;
 	justify-content: flex-end;
@@ -102,8 +100,6 @@
 	display: flex;
 	flex-direction: column;
 	margin: 5px;
-	/* background-color: #231010; */
-	/* color: white; */
 }
 
 .card:hover {
